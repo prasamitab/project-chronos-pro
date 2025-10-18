@@ -41,6 +41,19 @@ def get_time_period(original_fragment):
     response = model.generate_content(prompt)
     return response.text.strip()
 
+def get_slang_category(original_fragment):
+    """Asks the AI to categorize the slang."""
+    prompt = f"""
+    Categorize the slang or cultural reference in the following text.
+    Use categories like "Gaming Slang," "Chat Acronyms," "Social Media Jargon," or "General Internet Slang."
+    Provide only the category name.
+
+    Original Fragment: "{original_fragment}"
+    """
+    response = model.generate_content(prompt)
+    return response.text.strip()
+
+
 def generate_report(original_fragment):
     """Generates the full report with text, links, time period, and an image."""
     try:
@@ -54,6 +67,7 @@ def generate_report(original_fragment):
         
         # Deeper Analysis
         time_period = get_time_period(original_fragment)
+        slang_category = get_slang_category(original_fragment) 
         
         # Web & Image Search
         contextual_links = search_for_context(search_query, search_type='text')
@@ -64,6 +78,7 @@ def generate_report(original_fragment):
             "reconstructed": reconstructed_text,
             "links": contextual_links,
             "period": time_period,
+            "category": slang_category,
             "image": context_image_url
         }
     except Exception as e:

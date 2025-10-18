@@ -3,21 +3,22 @@ import streamlit as st
 from main import generate_report
 
 st.set_page_config(page_title="Project Chronos", page_icon="🏛️")
+
 st.title("🏛️ Project Chronos: The AI Archeologist")
-st.write("Enter a piece of fragmented or obscure text from old internet sources. The AI will reconstruct it, estimate its time period, and find visual and text-based context.")
+st.write("Enter a piece of fragmented text from the early internet. Our AI will excavate its meaning, estimate its time period, and find visual context.")
 
-fragment = st.text_input("Enter Fragmented Text:", placeholder="e.g., smh at the top 8 drama. g2g, ttyl.")
+fragment = st.text_input("Enter Fragmented Text:", placeholder="e.g., w00t! that n00b got pwned on Counter-Strike.")
 
-if st.button("Reconstruct"):
+if st.button("Excavate ⛏️"):
     if fragment:
-        with st.spinner("Excavating digital history... This may take a moment."):
+        with st.spinner("Analyzing digital artifacts... This may take a moment."):
             report = generate_report(fragment)
         
         st.divider()
         st.header("Archeological Findings")
 
         if "error" in report:
-            st.error(f"An error occurred: {report['error']}")
+            st.error(f"An error occurred during excavation: {report['error']}")
         else:
             st.subheader("Original Fragment")
             st.markdown(f"> {report['original']}")
@@ -26,6 +27,7 @@ if st.button("Reconstruct"):
             st.success(f"**{report['reconstructed']}**")
 
             st.info(f"**Estimated Time Period:** {report.get('period', 'N/A')}")
+            st.info(f"**Slang Category:** {report.get('category', 'N/A')}")
             
             st.subheader("Visual Context")
             if report.get('image'):
@@ -40,4 +42,4 @@ if st.button("Reconstruct"):
             else:
                 st.write("No relevant text sources found.")
     else:
-        st.warning("Please enter some text to reconstruct.")
+        st.warning("Please enter some text to analyze.")

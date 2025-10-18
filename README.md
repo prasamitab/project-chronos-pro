@@ -47,3 +47,11 @@ Run the application from your terminal by providing the fragmented text in quote
 ```bash
 python main.py "smh at the top 8 drama. ppl need to chill. g2g, ttyl."
 python main.py "w00t! that n00b got pwned on Counter-Strike."
+
+## Future Plans
+
+While Project Chronos is a fully functional tool, its potential can be expanded even further:
+
+* **Browser Extension:** Develop a Chrome extension that allows users to highlight any text on any webpage, right-click, and get an instant reconstruction report.
+* **Confidence Scoring:** Enhance the AI to provide a confidence score (e.g., "95% certain") for its reconstruction and analysis, adding a layer of scientific rigor.
+* **Historical Trend Analysis:** Build functionality to analyze an entire forum thread or archive, visualizing how specific slang terms emerged and faded over time.
