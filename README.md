@@ -3,6 +3,14 @@
 **Student Name(s):** Prasamita Bangal
 **Student ID(s):** SE23UMCS048
 
+## Features
+
+* **Interactive Web Interface:** A user-friendly UI built with Streamlit.
+* **AI-Powered Text Reconstruction:** Translates cryptic slang into clear, modern English.
+* **Deeper AI Analysis:** Estimates the text's time period (e.g., "Early 2000s") and slang category (e.g., "Gaming Slang").
+* **Visual Context:** Automatically finds and displays a relevant historical image to provide an instant "aha!" moment of understanding.
+* **Automated Source Linking:** Provides hyperlinks to articles and definitions for further reading.
+
 ## Project Description
 
 Project Chronos is an "AI Archeologist" application that takes fragmented or obscure text from old internet sources. It uses the Google Gemini API to reconstruct the text into a clear, modern sentence and then performs an automated web search to find contextual sources that explain the original slang and cultural references.
@@ -11,21 +19,21 @@ Project Chronos is an "AI Archeologist" application that takes fragmented or obs
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/prasamitab/project-chronos
-    cd project-chronos
+    git clone [https://github.com/prasamitab/project-chronos-pro.git](https://github.com/prasamitab/project-chronos-pro.git)
+    cd project-chronos-pro
     ```
 
 2.  **Create and Activate a Virtual Environment:**
+    *For macOS/Linux:*
     ```bash
-    # For macOS/Linux
     python3 -m venv venv
     source venv/bin/activate
-
-    # For Windows
+    ```
+    *For Windows:*
+    ```bash
     python -m venv venv
     venv\Scripts\activate
     ```
-
 3.  **Install Dependencies:**
     ```bash
     pip install -r requirements.txt
@@ -41,12 +49,19 @@ Project Chronos is an "AI Archeologist" application that takes fragmented or obs
 
 ## Usage Guide
 
-Run the application from your terminal by providing the fragmented text in quotes as a command-line argument.
+1.  **Launch the Web Application**
+    Run the following command in your terminal from the project's root directory:
+    ```bash
+    streamlit run app.py
+    ```
 
-**Example Command:**
-```bash
-python main.py "smh at the top 8 drama. ppl need to chill. g2g, ttyl."
-python main.py "w00t! that n00b got pwned on Counter-Strike."
+2.  **Use the App**
+    Your web browser will open with the application. Enter a piece of fragmented text into the input box and click the "Excavate ⛏️" button to see the full analysis.
+
+    **Example Inputs:**
+    * `smh at the top 8 drama. ppl need to chill. g2g, ttyl.`
+    * `w00t! that n00b got pwned on Counter-Strike.`
+
 
 ## Future Plans
 
